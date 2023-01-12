@@ -1,0 +1,39 @@
+# version: "3"
+# services:
+#   mero-node-app:
+#     build: . 
+#     ports:
+#       - "5000:8000"
+#       # - "4000:8000"
+
+#     volumes:
+#       - ./:/app
+
+#       # this is to make sure that we don't overrite node_modules folder
+#       - /app/node_modules
+
+#     environment:
+#       - port=8000
+    
+#     # if required we can map the whole .env file  
+#     # env_file:
+#       # - ./:.env
+
+
+
+version: "3"
+services:
+  mero-node-app:
+    build: .
+    
+    ports: 
+      - "3000:8000"
+
+    environment:
+      - port=8000
+  
+  mongo:
+    image: mongo 
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=iamnitesh
+      - MONGO_INITDB_ROOT_PASSWORD=admin4545
